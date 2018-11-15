@@ -85,8 +85,8 @@ if __name__ == '__main__':
         if name.startswith('var_') and value:
             name = re.sub(r'^var_', '', name)
             assert name in default_options, name
-            data = default_options.get(name)
-            config[data[0]] = value
+            item = default_options.get(name)
+            config[item[0]] = value
 
     command = 'pandoc -s --mathjax -i -t revealjs'
     for name, value in config.items():
