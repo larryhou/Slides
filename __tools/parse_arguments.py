@@ -14,11 +14,11 @@ def camel(s:str)->str:
             result += c
     return result
 
-def uncamel(s:str, undercore:bool = False)->str:
+def uncamel(s:str, use_underscore:bool = False)->str:
     result = ''
     for c in s:
         if c.isupper():
-            result += ('_' if undercore else '-') + c.lower()
+            result += ('_' if use_underscore else '-') + c.lower()
         else:
             result += c
     return result
