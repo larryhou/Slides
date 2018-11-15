@@ -26,7 +26,7 @@ if __name__ == '__main__':
     import argparse, sys
     arguments = argparse.ArgumentParser()
     arguments.add_argument('--transition', '-t', default='convex', choices=SlideTransition.option_choices(), help='slide transition')
-    arguments.add_argument('--theme', '-m', default='white', choices=SlideTheme.option_choices(), help='slide theme')
+    arguments.add_argument('--theme', '-m', default='league', choices=SlideTheme.option_choices(), help='slide theme')
     arguments.add_argument('--name', '-n', required=True, help='slide name')
     # size and margin
     arguments.add_argument('--height', '-v', type=int, default=720, help='slide height')
