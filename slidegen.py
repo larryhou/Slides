@@ -27,8 +27,13 @@ if __name__ == '__main__':
     arguments = argparse.ArgumentParser()
     arguments.add_argument('--transition', '-t', default='convex', choices=SlideTransition.option_choices(), help='slide transition')
     arguments.add_argument('--theme', '-m', default='white', choices=SlideTheme.option_choices(), help='slide theme')
-    arguments.add_argument('--aspect', '-s', default='43', choices=['1610', '169', '149', '54', '43', '32'], help='1610=16:10 169=16:9 14:9=14:9 54=5:4 43=4:3 32=3:2')
     arguments.add_argument('--name', '-n', required=True, help='slide name')
+    # size and margin
+    arguments.add_argument('--height', '-v', type=int, default=720, help='slide height')
+    arguments.add_argument('--width', '-w', type=int, default=1280, help='slide width')
+    arguments.add_argument('--margin', '-g', type=float, default=0.1, help='margins around slide')
+    arguments.add_argument('--min-scale', '-ms', type=float, default=0.2, help='minimum scale ratio for slides')
+    arguments.add_argument('--max-scale', '-xs', type=float, default=1.5, help='maximum scale ratio for slides')
     # reveal.js parameters
     arguments.add_argument('--var-controls', choices=['true', 'false'])
     arguments.add_argument('--var-controls-tutorial', choices=['true', 'false'])
@@ -77,8 +82,12 @@ if __name__ == '__main__':
     config = {
         'revealjs-url': '../reveal.js',
         'theme': options.theme,
-        'aspectratio': options.aspect,
-        'transition': options.transition
+        'transition': options.transition,
+        'width': options.width,
+        'height': options.height,
+        'margin': options.margin,
+        'minScale': options.min_scale,
+        'maxScale': options.max_scale,
     }
 
     for name, value in vars(options).items():
