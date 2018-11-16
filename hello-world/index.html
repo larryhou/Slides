@@ -106,6 +106,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="fragment">1.1.1</li>
 </ul>
+<div class="fragment">
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">class</span> SlideTransition(enum.Enum):</a>
 <a class="sourceLine" id="cb1-2" title="2">    none, fade, slide, convex, concave, zoom <span class="op">=</span> <span class="bu">range</span>(<span class="dv">6</span>)</a>
 <a class="sourceLine" id="cb1-3" title="3"></a>
@@ -125,6 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb1-17" title="17">        <span class="cf">for</span> name, value <span class="kw">in</span> <span class="bu">vars</span>(cls).items():</a>
 <a class="sourceLine" id="cb1-18" title="18">            <span class="cf">if</span> <span class="bu">isinstance</span>(value, SlideTheme): choices.append(name)</a>
 <a class="sourceLine" id="cb1-19" title="19">        <span class="cf">return</span> choices</a></code></pre></div>
+</div>
 <ul>
 <li class="fragment">1.1.2</li>
 </ul>

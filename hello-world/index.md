@@ -7,6 +7,7 @@
 ### 1.1
 - 1.1.1
 
+<div class="fragment">
 ```python
 class SlideTransition(enum.Enum):
     none, fade, slide, convex, concave, zoom = range(6)
@@ -29,6 +30,7 @@ class SlideTheme(enum.Enum):
         return choices
 
 ```
+</div>
 
 - 1.1.2
 
