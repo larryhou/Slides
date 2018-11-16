@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_house[shape=house]
+   node_house[label="house"]
+}

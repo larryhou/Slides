@@ -1,0 +1,8 @@
+digraph {
+   graph[rankdir=LR]
+   edge[arrowhead="diamond"]
+   bgcolor=transparent;
+   node_point[shape=point]
+   node_point -> node_diamond;
+   node_diamond[label="diamond"]
+}

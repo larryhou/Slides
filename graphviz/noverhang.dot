@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_noverhang[shape=noverhang]
+   node_noverhang[label=""]
+}

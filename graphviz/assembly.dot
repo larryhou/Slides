@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_assembly[shape=assembly]
+   node_assembly[label=""]
+}

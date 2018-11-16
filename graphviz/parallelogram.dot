@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_parallelogram[shape=parallelogram]
+   node_parallelogram[label="parallelogram"]
+}

@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_proteasesite[shape=proteasesite]
+   node_proteasesite[label=""]
+}

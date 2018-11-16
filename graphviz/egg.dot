@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_egg[shape=egg]
+   node_egg[label="egg"]
+}

@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_doubleoctagon[shape=doubleoctagon]
+   node_doubleoctagon[label="doubleoctagon"]
+}

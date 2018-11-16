@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_note[shape=note]
+   node_note[label="note"]
+}

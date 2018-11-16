@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_signature[shape=signature]
+   node_signature[label=""]
+}

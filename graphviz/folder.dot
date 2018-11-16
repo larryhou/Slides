@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_folder[shape=folder]
+   node_folder[label="folder"]
+}

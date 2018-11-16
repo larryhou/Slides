@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_polygon[shape=polygon]
+   node_polygon[label="polygon"]
+}

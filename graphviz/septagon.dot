@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_septagon[shape=septagon]
+   node_septagon[label="septagon"]
+}

@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_primersite[shape=primersite]
+   node_primersite[label=""]
+}

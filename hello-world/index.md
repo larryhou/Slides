@@ -5,7 +5,7 @@
 ## 第一章
 
 ### 1.1
-- 1.1.1
+* 1.1.1
 
 <div class="fragment">
 ```python
@@ -32,13 +32,20 @@ class SlideTheme(enum.Enum):
 ```
 </div>
 
-- 1.1.2
+* 1.1.2
 
 ### 1.2
 
 ### 1.3
 
 ### 
+
+| | | | |
+|:--|:--|:--|:--|
+|8 bit| byte (int8)| ubyte (uint8)| bool|
+|16 bit| short (int16)| ushort (uint16)||
+|32 bit| int (int32)| uint (uint32)| float (float32)|
+|64 bit| long (int64)| ulong (uint64)| double (float64)|
 
 ## 第二章
 

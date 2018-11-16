@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_box3d[shape=box3d]
+   node_box3d[label="box3d"]
+}

@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_hexagon[shape=hexagon]
+   node_hexagon[label="hexagon"]
+}

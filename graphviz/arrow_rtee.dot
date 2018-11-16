@@ -1,0 +1,8 @@
+digraph {
+   graph[rankdir=LR]
+   edge[arrowhead="rtee"]
+   bgcolor=transparent;
+   node_point[shape=point]
+   node_point -> node_rtee;
+   node_rtee[label="rtee"]
+}

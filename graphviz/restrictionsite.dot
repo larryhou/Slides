@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_restrictionsite[shape=restrictionsite]
+   node_restrictionsite[label=""]
+}

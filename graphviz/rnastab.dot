@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_rnastab[shape=rnastab]
+   node_rnastab[label=""]
+}

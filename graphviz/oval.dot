@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_oval[shape=oval]
+   node_oval[label="oval"]
+}

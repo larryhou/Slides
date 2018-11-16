@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_insulator[shape=insulator]
+   node_insulator[label=""]
+}

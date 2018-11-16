@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_diamond[shape=diamond]
+   node_diamond[label="diamond"]
+}

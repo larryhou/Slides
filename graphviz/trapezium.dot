@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_trapezium[shape=trapezium]
+   node_trapezium[label="trapezium"]
+}

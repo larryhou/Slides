@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_cylinder[shape=cylinder]
+   node_cylinder[label="cylinder"]
+}

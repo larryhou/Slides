@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_rectangle[shape=rectangle]
+   node_rectangle[label="rectangle"]
+}

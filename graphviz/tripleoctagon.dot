@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_tripleoctagon[shape=tripleoctagon]
+   node_tripleoctagon[label="tripleoctagon"]
+}

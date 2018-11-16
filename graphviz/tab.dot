@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_tab[shape=tab]
+   node_tab[label="tab"]
+}

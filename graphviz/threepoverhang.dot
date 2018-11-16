@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_threepoverhang[shape=threepoverhang]
+   node_threepoverhang[label=""]
+}

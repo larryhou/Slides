@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_square[shape=square]
+   node_square[label="square"]
+}

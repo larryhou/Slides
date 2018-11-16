@@ -1,0 +1,8 @@
+digraph {
+   graph[rankdir=LR]
+   edge[arrowhead="ricurve"]
+   bgcolor=transparent;
+   node_point[shape=point]
+   node_point -> node_ricurve;
+   node_ricurve[label="ricurve"]
+}

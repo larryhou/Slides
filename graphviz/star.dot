@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_star[shape=star]
+   node_star[label="star"]
+}

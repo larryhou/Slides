@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_Msquare[shape=Msquare]
+   node_Msquare[label="Msquare"]
+}

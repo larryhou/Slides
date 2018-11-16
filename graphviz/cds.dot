@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_cds[shape=cds]
+   node_cds[label=""]
+}

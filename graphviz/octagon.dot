@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_octagon[shape=octagon]
+   node_octagon[label="octagon"]
+}

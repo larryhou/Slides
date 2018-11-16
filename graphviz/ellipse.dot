@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_ellipse[shape=ellipse]
+   node_ellipse[label="ellipse"]
+}

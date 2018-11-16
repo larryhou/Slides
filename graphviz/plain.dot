@@ -1,0 +1,5 @@
+digraph {
+   bgcolor=transparent;
+   node_plain[shape=plain]
+   node_plain[label="plain"]
+}
