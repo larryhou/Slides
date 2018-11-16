@@ -132,7 +132,6 @@ if __name__ == '__main__':
                 line = slide_number_pattern.sub(r'\g<1>{!r}\g<3>'.format(slide_number_style), line)
             temp.write(line)
     temp.seek(0)
-    print(fp.name)
     with open(fp.name, 'w') as fp:
         fp.write(temp.read())
     os.remove(temp.name)
