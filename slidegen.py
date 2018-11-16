@@ -54,8 +54,8 @@ if __name__ == '__main__':
     arguments.add_argument('--var-controls-layout')
     arguments.add_argument('--var-controls-back-arrows')
     arguments.add_argument('--var-progress', choices=['true', 'false'])
-    arguments.add_argument('--var-slide-number', default='c/t', choices=['true','false','c/t', 'c', 'h/v', 'h.v'])
-    arguments.add_argument('--var-show-slide-number', default='all', choices=['all', 'speaker', 'print'])
+    arguments.add_argument('--var-slide-number', choices=['true','false','c/t', 'c', 'h/v', 'h.v'])
+    arguments.add_argument('--var-show-slide-number', choices=['all', 'speaker', 'print'])
     arguments.add_argument('--var-history', choices=['true', 'false'])
     arguments.add_argument('--var-keyboard', choices=['true', 'false'])
     arguments.add_argument('--var-overview', choices=['true', 'false'])
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     arguments.add_argument('--var-parallax-background-vertical')
     arguments.add_argument('--var-display')
 
-    default_options = {'controls': ['controls', 'true'], 'controls_tutorial': ['controlsTutorial', 'true'], 'controls_layout': ['controlsLayout', 'bottom-right'], 'controls_back_arrows': ['controlsBackArrows', 'faded'], 'progress': ['progress', 'true'], 'slide_number': ['slideNumber', 'false'], 'history': ['history', 'false'], 'keyboard': ['keyboard', 'true'], 'overview': ['overview', 'true'], 'center': ['center', 'true'], 'touch': ['touch', 'true'], 'loop': ['loop', 'false'], 'rtl': ['rtl', 'false'], 'shuffle': ['shuffle', 'false'], 'fragments': ['fragments', 'true'], 'fragment_in_url': ['fragmentInURL', 'false'], 'embedded': ['embedded', 'false'], 'help': ['help', 'true'], 'show_notes': ['showNotes', 'false'], 'auto_play_media': ['autoPlayMedia', None], 'auto_slide': ['autoSlide', 0], 'auto_slide_stoppable': ['autoSlideStoppable', 'true'], 'auto_slide_method': ['autoSlideMethod', 'Reveal.navigateNext'], 'default_timing': ['defaultTiming', 120], 'mouse_wheel': ['mouseWheel', 'false'], 'hide_address_bar': ['hideAddressBar', 'true'], 'preview_links': ['previewLinks', 'false'], 'transition': ['transition', 'slide'], 'transition_speed': ['transitionSpeed', 'default'], 'background_transition': ['backgroundTransition', 'fade'], 'view_distance': ['viewDistance', 3], 'parallax_background_image': ['parallaxBackgroundImage', ''], 'parallax_background_size': ['parallaxBackgroundSize', ''], 'parallax_background_horizontal': ['parallaxBackgroundHorizontal', None], 'parallax_background_vertical': ['parallaxBackgroundVertical', None], 'display': ['display', 'block']}
+    option_map = {'fragment-in-url':'fragmentInURL'}
 
     options = arguments.parse_args(sys.argv[1:])
     import os.path as p
@@ -108,8 +108,8 @@ if __name__ == '__main__':
     for name, value in vars(options).items():
         if name.startswith('var_') and value:
             name = re.sub(r'^var_', '', name)
-            if name in default_options:
-                name = default_options.get(name)[0]
+            if name in option_map:
+                name = option_map.get(name)
             else:
                 name = camel(name)
             config[name] = value
@@ -122,7 +122,10 @@ if __name__ == '__main__':
     command += ' -o {}/index.html'.format(slide_name)
     print('+ {}'.format(command))
     assert os.system(command) == 0
+
+    # slide number bugfix
     slide_number_style = options.var_slide_number
+    if not slide_number_style: exit()
     slide_number_pattern = re.compile(r'(slideNumber:\s*)({})(\s*,)'.format(slide_number_style))
     import tempfile
     temp = open(tempfile.mktemp('_slide.html'), 'w+')
