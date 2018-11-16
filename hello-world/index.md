@@ -20,7 +20,7 @@ class SlideTransition(enum.Enum):
         return choices
 
 class SlideTheme(enum.Enum):
-    black, white, league, beige, sky, night, serif, simple, solarized = range(9)
+    black, white, league, beige, sky, night, serif, simple, solarized, blood, moon = range(11)
 
     @classmethod
     def option_choices(cls):
