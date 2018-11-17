@@ -467,7 +467,7 @@ digraph
 </td><td style="vertical-align:middle"><img class="plain" src="3-7.svg"/></td></tr></table>
 
 
-### 节点属性[上]
+### 设置样式
 
 <div style="font-size:30px;">类似图形属性，节点属性设置放到`node[]`里面</div>
 
@@ -501,7 +501,7 @@ digraph
 
 <div style="font-size:30px;">[更多属性设置](https://graphviz.gitlab.io/_pages/pdf/dotguide.pdf)</div>
 
-### 节点属性[下]
+### 节点属性
 
 - `node[]`定义的属性影响之后的节点属性
 - 单个节点后添加方括号`[]`可以覆盖覆盖`node`定义的属性
