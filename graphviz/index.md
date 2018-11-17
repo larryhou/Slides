@@ -322,7 +322,135 @@ digraph {
 ```
 </td><td><img class="plain" src="3-2.svg"/></td></tr></table>
 
-### 节点属性
+### 连接点方位
+
+<table width="100%" height="100%"><tr><td style="vertical-align:top">
+```dot
+digraph
+{
+	bgcolor=transparent;
+	edge[arrowhead=vee];
+	node[shape=note, tailport=n];
+	main -> parse -> execute;
+	main:se -> init:n;
+	main -> cleanup;
+	execute -> make_string[tailport=sw];
+	execute -> printf[tailport=nw, headport=nw]
+	init:e -> make_string:e;
+	main -> printf[headport=s];
+	execute -> compare;
+}
+```
+</td><td><img class="plain" src="3-4.svg"/></td></tr></table>
+
+### 表格图形
+
+<table width="100%" height="100%"><tr><td style="vertical-align:top">
+```dot
+digraph 
+{
+	bgcolor=transparent;
+	node [shape=record];
+	struct1 [shape=record, 
+		label="<f0> left|<f1> mid\ dle|<f2> right"];
+	struct2 [shape=record,
+		label="<f0> one|<f1> two"];
+	struct3 [shape=record,
+		label="hello\nworld |{ b |{c|<here> d|e}| f}| g | h"];
+	struct1 -> struct2;
+	struct1 -> struct3;
+ }
+```
+</td><td><img class="plain" src="3-3.svg"/></td></tr></table>
+
+<div style="font-size:30px">在node里面设置shape=record，然后在label属性里面添加单元格，单元格之前通过竖线`|`分割，可以通过添加`{}`增加嵌套表格，默认为横排，奇数次嵌套表示竖排，偶数次嵌套表示横排</div>
+
+### 表格锚点 1/3
+
+<table width="100%" height="100%"><tr><td style="vertical-align:top">
+```dot
+digraph
+{
+	bgcolor=transparent;
+	node [shape = record,height=.1];
+	node0[label = "<f0> |<f1> G|<f2> "];
+	node1[label = "<f0> |<f1> E|<f2> "];
+	node2[label = "<f0> |<f1> B|<f2> "];
+	node3[label = "<f0> |<f1> F|<f2> "];
+	node4[label = "<f0> |<f1> R|<f2> "];
+	node5[label = "<f0> |<f1> H|<f2> "];
+	node6[label = "<f0> |<f1> Y|<f2> "];
+	node7[label = "<f0> |<f1> A|<f2> "];
+	node8[label = "<f0> |<f1> C|<f2> "];
+	"node0":f2 -> "node4":f1;
+	"node0":f0 -> "node1":f1;
+	"node1":f0 -> "node2":f1;
+	"node1":f2 -> "node3":f1;
+	"node2":f2 -> "node8":f1;
+	"node2":f0 -> "node7":f1;
+	"node4":f2 -> "node6":f1;
+	"node4":f0 -> "node5":f1;
+}
+```
+</td><td><img class="plain" src="3-5.svg"/></td></tr></table>
+
+### 表格锚点 2/3
+
+<table width="100%" height="100%"><tr><td style="vertical-align:top">
+```dot
+digraph 
+{
+	bgcolor=transparent;
+	node [shape=record];
+	struct1 [shape=record,
+        label="<f0> left|<f1> middle|<f2> right"];
+	struct2 [shape=record,
+        label="<f0> one|<f1> two"];
+	struct3 [shape=record,
+        label="hello\nworld |{ b |{c|<here> d|e}| f}| g | h"];
+	struct1:f1 -> struct2:f0;
+	struct1:f2 -> struct3:here;
+}
+```
+</td><td><img class="plain" src="3-6.svg"/></td></tr></table>
+
+### 表格锚点 3/3
+
+<table width="100%" height="100%"><tr><td style="vertical-align:top">
+```dot
+digraph
+{
+	bgcolor=transparent;
+	nodesep=.05;
+	rankdir=LR;
+	node [shape=record,width=.1,height=.1];
+
+	node0 [label = 
+        "<f0> |<f1> |<f2> |<f3> |<f4> |<f5> |<f6> | ",
+        height=2.5];
+	node [width = 1.5];
+	node1 [label = "{<n> n14 | 719 |<p> }"];
+	node2 [label = "{<n> a1  | 805 |<p> }"];
+	node3 [label = "{<n> i9  | 718 |<p> }"];
+	node4 [label = "{<n> e5  | 989 |<p> }"];
+	node5 [label = "{<n> t20|959|<p>}"];
+	node6 [label = "{<n> o15|794|<p>}"];
+	node7 [label = "{<n> s19|659|<p>}"];
+	
+	node0:f0 -> node1:n;
+	node0:f1 -> node2:n;
+	node0:f2 -> node3:n;
+	node0:f5 -> node4:n;
+	node0:f6 -> node5:n;
+	node2:p -> node6:n;
+	node4:p -> node7:n;
+ }
+
+```
+</td><td><img class="plain" src="3-7.svg"/></td></tr></table>
+
+
+### 节点属性[上]
 
 <div style="font-size:30px;">类似图形属性，节点属性设置放到`node[]`里面</div>
 
@@ -356,7 +484,13 @@ digraph
 
 <div style="font-size:30px;">[更多属性设置](https://graphviz.gitlab.io/_pages/pdf/dotguide.pdf)</div>
 
-## 边界/Edge
+### 节点属性[下]
+
+- `node[]`定义的属性影响之后的节点属性
+- 单个节点后添加方括号`[]`可以覆盖覆盖`node`定义的属性
+- `node[]`属性可以重复出现，后定义的属性覆盖之前的属性
+
+## 线条/Edge
 
 ### 箭头样式
 
@@ -413,9 +547,9 @@ digraph
 </table>
 </div>
 
-### 边界属性
+### 线条属性
 
-<div style="font-size:30px;">边界属性设置放到`edge[]`里面</div>
+<div style="font-size:30px;">线条属性设置放到`edge[]`里面</div>
 
 <table width="100%" height="100%"><tr><td style="vertical-align:top">
 ```dot
