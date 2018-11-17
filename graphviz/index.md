@@ -19,7 +19,7 @@ digraph{
 	execute -> compare;
 }
 ```
-</td><td class="fragment"><img class="plain" src="1-1.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="1-1.svg"/></td></tr></table>
 
 <div class="fragment">
 ```bash
@@ -43,7 +43,7 @@ digraph{
 	execute -> compare;
 }
 ```
-</td><td class="fragment"><img class="plain" src="1-2.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="1-2.svg"/></td></tr></table>
 
 ### 箭头样式
 <table width="100%" height="100%"><tr><td style="vertical-align:top">
@@ -62,7 +62,7 @@ digraph{
 	execute -> compare;
 }
 ```
-</td><td class="fragment"><img class="plain" src="1-3.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="1-3.svg"/></td></tr></table>
 
 ### 左右排版
 <table width="100%" height="100%"><tr><td style="vertical-align:top">
@@ -82,7 +82,7 @@ digraph{
 	execute -> compare;
 }
 ```
-</td><td class="fragment"><img class="plain" src="1-4.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="1-4.svg"/></td></tr></table>
 
 ### 下上排版
 <table width="100%" height="100%"><tr><td style="vertical-align:top">
@@ -102,7 +102,7 @@ digraph{
 	execute -> compare;
 }
 ```
-</td><td class="fragment"><img class="plain" src="1-5.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="1-5.svg"/></td></tr></table>
 
 ### 节点形状
 <table width="100%" height="100%"><tr><td style="vertical-align:top">
@@ -122,7 +122,7 @@ digraph{
 	execute -> compare;
 }
 ```
-</td><td class="fragment"><img class="plain" src="1-6.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="1-6.svg"/></td></tr></table>
 
 ## 图形/Graph
 
@@ -174,7 +174,7 @@ digraph
 	d -> h;
 }
 ```
-</td><td class="fragment"><img class="plain" src="2-1.svg"/></td></tr></table>
+</td><td><img class="plain" src="2-1.svg"/></td></tr></table>
 
 ### 图形属性
 
@@ -296,7 +296,7 @@ digraph
 </table>
 </div>
 
-### 自定义多边形
+### 定制多边形
 
 <table width="100%" height="100%"><tr><td style="vertical-align:top">
 ```dot
@@ -320,9 +320,9 @@ digraph {
 	g7 -> a1 -> a2;
 }
 ```
-</td><td><img class="plain" src="3-2.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="3-2.svg"/></td></tr></table>
 
-### 连接点方位
+### 连接方位
 
 <table width="100%" height="100%"><tr><td style="vertical-align:top">
 ```dot
@@ -341,7 +341,7 @@ digraph
 	execute -> compare;
 }
 ```
-</td><td><img class="plain" src="3-4.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="3-4.svg"/></td></tr></table>
 
 ### 表格图形
 
@@ -361,9 +361,26 @@ digraph
 	struct1 -> struct3;
  }
 ```
-</td><td><img class="plain" src="3-3.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="3-3.svg"/></td></tr></table>
 
-<div style="font-size:30px">node属性设置shape=record，同时label属性里面添加竖线`|`分割的单元格，添加花括号`{}`可以增加嵌套表格，默认为横排，奇数次嵌套表示竖排，偶数次嵌套表示横排</div>
+### 排列规则
+
+<div style="font-size:30px">node属性设置shape=record，同时label属性里面添加竖线`|`分割的单元格，使用花括号`{}`可以增加嵌套表格，默认为横排，奇数次嵌套表示竖排，偶数次嵌套表示横排</div>
+
+<table width="100%" height="100%"><tr><td style="vertical-align:top">
+```dot
+digraph 
+{
+	bgcolor=transparent;
+	node [shape=record, 
+        fontname="Baskerville"];
+	table [shape=record,
+        label="0|A|{1|B|{2|C|{3|D|{4|E|F|G}|H|I}|J|K}|L|M}|N|O"];
+}
+```
+</td><td style="vertical-align:middle"><img class="plain" src="t.svg"/></td></tr></table>
+
+
 
 ### 表格锚点 1/3
 
@@ -392,7 +409,7 @@ digraph
 	"node4":f0 -> "node5":f1;
 }
 ```
-</td><td><img class="plain" src="3-5.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="3-5.svg"/></td></tr></table>
 
 ### 表格锚点 2/3
 
@@ -412,7 +429,7 @@ digraph
 	struct1:f2 -> struct3:here;
 }
 ```
-</td><td><img class="plain" src="3-6.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="3-6.svg"/></td></tr></table>
 
 ### 表格锚点 3/3
 
@@ -447,7 +464,7 @@ digraph
  }
 
 ```
-</td><td><img class="plain" src="3-7.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="3-7.svg"/></td></tr></table>
 
 
 ### 节点属性[上]
@@ -480,7 +497,7 @@ digraph
 	d -> h;
 }
 ```
-</td><td><img class="plain" src="3-1.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="3-1.svg"/></td></tr></table>
 
 <div style="font-size:30px;">[更多属性设置](https://graphviz.gitlab.io/_pages/pdf/dotguide.pdf)</div>
 
@@ -580,7 +597,7 @@ digraph {
     end [shape=Msquare];
 }
 ```
-</td><td><img class="plain" src="4-1.svg"/></td></tr></table>
+</td><td style="vertical-align:middle"><img class="plain" src="4-1.svg"/></td></tr></table>
 
 <div style="font-size:30px;">[更多属性设置](https://graphviz.gitlab.io/_pages/pdf/dotguide.pdf)</div>
 
