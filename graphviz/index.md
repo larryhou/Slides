@@ -363,7 +363,7 @@ digraph
 ```
 </td><td><img class="plain" src="3-3.svg"/></td></tr></table>
 
-<div style="font-size:30px">在node里面设置shape=record，然后在label属性里面添加单元格，单元格之前通过竖线`|`分割，可以通过添加`{}`增加嵌套表格，默认为横排，奇数次嵌套表示竖排，偶数次嵌套表示横排</div>
+<div style="font-size:30px">node属性设置shape=record，同时label属性里面添加竖线`|`分割的单元格，添加花括号`{}`可以增加嵌套表格，默认为横排，奇数次嵌套表示竖排，偶数次嵌套表示横排</div>
 
 ### 表格锚点 1/3
 
