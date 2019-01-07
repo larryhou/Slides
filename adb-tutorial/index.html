@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="LARRY HOU">
+  <title>ADB Tutorial</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="../reveal.js/css/theme/moon.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '../reveal.js/css/print/pdf.css' : '../reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="../reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">ADB Tutorial</h1>
+  <p class="author">LARRY HOU</p>
+  <p class="date">Jan 7, 2019</p>
+</section>
+
+<section id="adb简介" class="slide level1">
+<h1>ADB简介</h1>
+<ul>
+<li class="fragment">Android Debug Bridge</li>
+<li class="fragment">使用方法 <code>adb [command]</code></li>
+</ul>
+<div class="fragment" style="font-size:18px">
+<p>devices | help | version | connect | disconnect | bugreport | connect | devices | disable-verity | disconnect | emu | enable-verity | forward | get-devpath | get-serialno | get-state | help | install | install-multiple | jdwp | keygen | kill-server | logcat | ppp | pull | push | reboot | reconnect | remount | reverse | root | shell | sideload | start-server | sync | tcpip | uninstall | unroot | usb | version | wait-for[-TRANSPORT]-STATE</p>
+</div>
+</section>
+<section id="常用命令" class="slide level1">
+<h1>常用命令</h1>
+<p>logcat | shell | pull | push | install</p>
+</section>
+<section id="adb-logcat" class="slide level1">
+<h1>adb logcat</h1>
+</section>
+<section id="adb-shell" class="slide level1">
+<h1>adb shell</h1>
+</section>
+<section id="adb-pull" class="slide level1">
+<h1>adb pull</h1>
+</section>
+<section id="adb-push" class="slide level1">
+<h1>adb push</h1>
+</section>
+<section id="无线连接" class="slide level1">
+<h1>无线连接</h1>
+<ul>
+<li class="fragment">adb tcpip 5555</li>
+<li class="fragment">断开USB连接，并保持电脑和手机处于同一个WiFi网络</li>
+<li class="fragment">adb connect [DEVICE_ADDRESS]:5555</li>
+<li class="fragment">执行各种adb命令</li>
+<li class="fragment">adb usb 恢复USB连接</li>
+</ul>
+</section>
+<section id="设备选择" class="slide level1">
+<h1>设备选择</h1>
+<pre><code>$ adb devices -l
+List of devices attached
+721QECRK2TCHA          device usb:336658432X product:meizu_M6Note_CN model:M6_Note device:M6Note transport_id:5
+d5e5e93a               device usb:336855040X product:PBFM00 model:PBFM00 device:PBFM00 transport_id:4</code></pre>
+<pre><code># 选择设备
+$ adb -s 721QECRK2TCHA shell
+M6Note:/ $ 
+
+# 更换设备
+$ adb -s d5e5e93a shell
+PBFM00:/ $ </code></pre>
+</section>
+<section id="远程桌面" class="slide level1">
+<h1>远程桌面</h1>
+<ul>
+<li class="fragment">TeamViewer</li>
+</ul>
+</section>
+<section id="section" class="slide level1">
+<h1></h1>
+<table>
+<tr>
+<td>
+<img class="plain" src="q1.png" />
+</td>
+<td>
+<img class="plain" src="q2.png" />
+</td>
+</tr>
+</table>
+</section>
+<section id="qa" class="slide level1">
+<h1>Q&amp;A</h1>
+</section>
+    </div>
+  </div>
+
+  <script src="../reveal.js/lib/js/head.min.js"></script>
+  <script src="../reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 1.5,
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '../reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: '../reveal.js/plugin/math/math.js', async: true },
+          { src: '../reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
